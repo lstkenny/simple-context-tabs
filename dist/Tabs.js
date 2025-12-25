@@ -73,9 +73,9 @@ function TabList(_a) {
         throw new Error('TabList must be used within a Tabs component');
     }
     var activeTab = context.activeTab, setActiveTab = context.setActiveTab;
-    return (_jsx("div", __assign({ className: "tab-list" }, { children: tabs.map(function (_a) {
+    return (_jsx("ul", __assign({ className: "tab-list" }, { children: tabs.map(function (_a) {
             var title = _a.title, hidden = _a.hidden;
-            return hidden ? null : (_jsx("button", __assign({ className: "tab ".concat(activeTab === title ? 'active' : ''), onClick: function () { return setActiveTab(title); } }, { children: title }), title));
+            return hidden ? null : (_jsx("li", __assign({ className: "tab ".concat(activeTab === title ? 'active' : ''), onClick: function () { return setActiveTab(title); } }, { children: title }), title));
         }) })));
 }
 export var TabPanel = function (_a) {
