@@ -100,17 +100,17 @@ function TabList({ tabs }: TabListProps) {
     const { activeTab, setActiveTab } = context;
 
     return (
-        <div className="tab-list">
+        <ul className="tab-list">
             {tabs.map(({ title, hidden }) => hidden ? null : (
-                <button
+                <li
                     key={title}
                     className={`tab ${activeTab === title ? 'active' : ''}`}
                     onClick={() => setActiveTab(title)}
                 >
                     {title}
-                </button>
+                </li>
             ))}
-        </div>
+        </ul>
     );
 }
 
