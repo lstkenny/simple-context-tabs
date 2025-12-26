@@ -64,7 +64,7 @@ export var Tabs = function (_a) {
             }
         }
     }, [activeTab, setActiveTab, tabs]);
-    return (_jsx(TabsContext.Provider, __assign({ value: value }, { children: _jsxs("div", __assign({ className: "tabs" }, { children: [_jsx(TabList, { tabs: tabs }), _jsx("div", __assign({ className: "tab-panels" }, { children: children }))] })) })));
+    return (_jsx(TabsContext.Provider, __assign({ value: value }, { children: _jsxs("div", __assign({ className: "sct-tabs" }, { children: [_jsx(TabList, { tabs: tabs }), _jsx("div", __assign({ className: "sct-tab-panels" }, { children: children }))] })) })));
 };
 function TabList(_a) {
     var tabs = _a.tabs;
@@ -73,9 +73,9 @@ function TabList(_a) {
         throw new Error('TabList must be used within a Tabs component');
     }
     var activeTab = context.activeTab, setActiveTab = context.setActiveTab;
-    return (_jsx("ul", __assign({ className: "tab-list" }, { children: tabs.map(function (_a) {
+    return (_jsx("ul", __assign({ className: "sct-tab-list" }, { children: tabs.map(function (_a) {
             var title = _a.title, hidden = _a.hidden;
-            return hidden ? null : (_jsx("li", __assign({ className: "tab ".concat(activeTab === title ? 'active' : ''), onClick: function () { return setActiveTab(title); } }, { children: title }), title));
+            return hidden ? null : (_jsx("li", __assign({ className: "sct-tab ".concat(activeTab === title ? 'active' : ''), onClick: function () { return setActiveTab(title); } }, { children: title }), title));
         }) })));
 }
 export var TabPanel = function (_a) {
@@ -99,5 +99,5 @@ export var TabPanel = function (_a) {
             setActiveTab(title);
         }
     }, [setActiveTab, title, active]);
-    return hidden || (activeTab !== title) ? null : (_jsx("div", __assign({ className: "tab-panel" }, { children: children })));
+    return hidden || (activeTab !== title) ? null : (_jsx("div", __assign({ className: "sct-tab-panel" }, { children: children })));
 };
