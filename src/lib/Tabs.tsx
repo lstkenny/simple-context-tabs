@@ -82,9 +82,9 @@ export const Tabs: React.FC<TabsProps> = ({ children }) => {
 
     return (
         <TabsContext.Provider value={value}>
-            <div className="tabs">
+            <div className="sct-tabs">
                 <TabList tabs={tabs} />
-                <div className="tab-panels">
+                <div className="sct-tab-panels">
                     {children}
                 </div>
             </div>
@@ -100,11 +100,11 @@ function TabList({ tabs }: TabListProps) {
     const { activeTab, setActiveTab } = context;
 
     return (
-        <ul className="tab-list">
+        <ul className="sct-tab-list">
             {tabs.map(({ title, hidden }) => hidden ? null : (
                 <li
                     key={title}
-                    className={`tab ${activeTab === title ? 'active' : ''}`}
+                    className={`sct-tab ${activeTab === title ? 'active' : ''}`}
                     onClick={() => setActiveTab(title)}
                 >
                     {title}
@@ -145,7 +145,7 @@ export const TabPanel: React.FC<TabPanelProps> = ({ title, hidden = false, activ
     }, [setActiveTab, title, active]);
 
     return hidden || (activeTab !== title) ? null : (
-        <div className="tab-panel">
+        <div className="sct-tab-panel">
             {children}
         </div>
     );

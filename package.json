@@ -1,6 +1,6 @@
 {
   "name": "simple-context-tabs",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Simple, self-registering tabs for React using Context API.",
   "main": "dist/Tabs.js",
   "module": "dist/Tabs.js",
